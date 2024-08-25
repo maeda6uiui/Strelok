@@ -20,10 +20,11 @@
             <artifactId>mechtatel-core</artifactId>
             <version>0.0.1-alpha0</version>
         </dependency>
+
         <dependency>
-            <groupId>com.github.dabasan</groupId>
-            <artifactId>mechtatel-logging</artifactId>
-            <version>0.0.1-alpha0</version>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.5.7</version>
         </dependency>
     </dependencies>
 </project>
