@@ -1,0 +1,30 @@
+{
+    "window": {
+        "title": "Strelok",
+        "width": 1280,
+        "height": 720,
+        "resizable": false,
+        "fullScreen": false,
+        "windowedFullScreen": false,
+        "monitorIndex": 0
+    },
+    "system": {
+        "fps": 60
+    },
+    "rendering": {
+        "engine": "VULKAN",
+        "imageFormat": "SRGB"
+    },
+    "textureOperation": {
+        "width": -1,
+        "height": -1,
+        "changeExtentOnRecreate": true
+    },
+    "vulkan": {
+        "enableValidationLayer": false,
+        "preferablePhysicalDeviceIndex": 0,
+        "preferableGraphicsFamilyIndex": 0,
+        "preferablePresentFamilyIndex": 0,
+        "albedoMSAASamples": 1
+    }
+}
