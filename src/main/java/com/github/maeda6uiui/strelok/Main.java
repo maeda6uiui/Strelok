@@ -54,7 +54,7 @@ public class Main extends Mechtatel implements ISceneEventReceiver {
     }
 
     @Override
-    public void sceneClosed(SceneType nextScene) {
+    public void changeScene(SceneType nextScene) {
         switch (nextScene) {
             case TITLE -> scene = new TitleScene(this);
             case GAME -> scene = new GameScene(this);

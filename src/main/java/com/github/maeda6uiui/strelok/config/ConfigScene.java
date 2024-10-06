@@ -32,7 +32,7 @@ public class ConfigScene implements IScene {
     @Override
     public void update(MttWindow window) {
         if (window.getKeyboardPressingCount(KeyCode.ESCAPE) == 1) {
-            parent.sceneClosed(SceneType.TITLE);
+            parent.changeScene(SceneType.TITLE);
         }
 
         window.present(window.getDefaultScreen());

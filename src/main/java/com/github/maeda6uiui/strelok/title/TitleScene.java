@@ -32,9 +32,9 @@ public class TitleScene implements IScene {
     @Override
     public void update(MttWindow window) {
         if (window.getKeyboardPressingCount(KeyCode.ENTER) == 1) {
-            parent.sceneClosed(SceneType.GAME);
+            parent.changeScene(SceneType.GAME);
         } else if (window.getKeyboardPressingCount(KeyCode.ESCAPE) == 1) {
-            parent.sceneClosed(SceneType.EXIT);
+            parent.changeScene(SceneType.EXIT);
         }
 
         window.present(window.getDefaultScreen());

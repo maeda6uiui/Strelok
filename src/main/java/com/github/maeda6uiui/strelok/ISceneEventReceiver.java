@@ -6,5 +6,5 @@ package com.github.maeda6uiui.strelok;
  * @author maeda6uiui
  */
 public interface ISceneEventReceiver {
-    void sceneClosed(SceneType nextScene);
+    void changeScene(SceneType nextScene);
 }

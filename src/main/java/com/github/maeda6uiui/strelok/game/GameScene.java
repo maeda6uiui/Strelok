@@ -63,7 +63,7 @@ public class GameScene implements IScene {
 
         if (window.getKeyboardPressingCount(KeyCode.ESCAPE) == 1) {
             this.cleanup();
-            parent.sceneClosed(SceneType.TITLE);
+            parent.changeScene(SceneType.TITLE);
         }
     }
 
