@@ -8,5 +8,5 @@ import com.github.maeda6uiui.mechtatel.core.MttWindow;
  * @author maeda6uiui
  */
 public interface IScene {
-    void onUpdate(MttWindow window);
+    void update(MttWindow window);
 }

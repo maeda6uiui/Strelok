@@ -29,7 +29,7 @@ public class GameScene implements IScene {
     }
 
     @Override
-    public void onUpdate(MttWindow window) {
+    public void update(MttWindow window) {
         camera.translate(
                 window.getKeyboardPressingCount(KeyCode.W),
                 window.getKeyboardPressingCount(KeyCode.S),

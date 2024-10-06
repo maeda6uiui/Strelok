@@ -40,6 +40,6 @@ public class Main extends Mechtatel {
 
     @Override
     public void onUpdate(MttWindow window) {
-        scene.onUpdate(window);
+        scene.update(window);
     }
 }
