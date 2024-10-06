@@ -3,9 +3,11 @@ package com.github.maeda6uiui.strelok;
 import com.github.maeda6uiui.mechtatel.core.Mechtatel;
 import com.github.maeda6uiui.mechtatel.core.MttSettings;
 import com.github.maeda6uiui.mechtatel.core.MttWindow;
-import com.github.maeda6uiui.mechtatel.core.screen.MttScreen;
+import com.github.maeda6uiui.strelok.game.GameScene;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
 
 public class Main extends Mechtatel {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
@@ -24,16 +26,20 @@ public class Main extends Mechtatel {
                 );
     }
 
+    private IScene scene;
+
     @Override
     public void onCreate(MttWindow window) {
-        MttScreen defaultScreen = window.getDefaultScreen();
-        defaultScreen.createLineSet().addPositiveAxes(10.0f).createBuffer();
+        try {
+            scene = new GameScene(window);
+        } catch (IOException e) {
+            logger.error("Error", e);
+            window.close();
+        }
     }
 
     @Override
     public void onUpdate(MttWindow window) {
-        MttScreen defaultScreen = window.getDefaultScreen();
-        defaultScreen.draw();
-        window.present(defaultScreen);
+        scene.onUpdate(window);
     }
 }
