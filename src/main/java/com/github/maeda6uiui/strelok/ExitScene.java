@@ -9,6 +9,11 @@ import com.github.maeda6uiui.mechtatel.core.MttWindow;
  */
 public class ExitScene implements IScene {
     @Override
+    public void init(MttWindow window) {
+
+    }
+
+    @Override
     public void update(MttWindow window) {
         window.close();
     }

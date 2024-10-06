@@ -6,6 +6,7 @@ package com.github.maeda6uiui.strelok;
  * @author maeda6uiui
  */
 public enum SceneType {
+    TITLE,
     GAME,
     CONFIG,
     EXIT

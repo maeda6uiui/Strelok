@@ -6,6 +6,10 @@ import com.github.maeda6uiui.mechtatel.core.input.keyboard.KeyCode;
 import com.github.maeda6uiui.mechtatel.core.screen.MttScreen;
 import com.github.maeda6uiui.mechtatel.core.screen.component.MttModel;
 import com.github.maeda6uiui.strelok.IScene;
+import com.github.maeda6uiui.strelok.ISceneEventReceiver;
+import com.github.maeda6uiui.strelok.SceneType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -16,11 +20,22 @@ import java.nio.file.Paths;
  * @author maeda6uiui
  */
 public class GameScene implements IScene {
+    private static final Logger logger = LoggerFactory.getLogger(GameScene.class);
+
+    private ISceneEventReceiver parent;
+
     private MttScreen mainScreen;
     private MttModel level;
     private FreeCamera camera;
 
-    public GameScene(MttWindow window) throws IOException {
+    public GameScene(ISceneEventReceiver parent) {
+        this.parent = parent;
+
+        logger.info("scene = game");
+    }
+
+    @Override
+    public void init(MttWindow window) throws IOException {
         mainScreen = window.createScreen(
                 new MttScreen.MttScreenCreateInfo()
         );
@@ -45,5 +60,15 @@ public class GameScene implements IScene {
 
         mainScreen.draw();
         window.present(mainScreen);
+
+        if (window.getKeyboardPressingCount(KeyCode.ESCAPE) == 1) {
+            this.cleanup();
+            parent.sceneClosed(SceneType.TITLE);
+        }
+    }
+
+    private void cleanup() {
+        level.cleanup();
+        mainScreen.cleanup();
     }
 }
