@@ -46,6 +46,8 @@ public class Main extends Mechtatel implements ISceneEventReceiver {
                 logger.error("Error", e);
                 scene = new ExitScene();
             }
+
+            mustInitScene = false;
         }
 
         scene.update(window);
