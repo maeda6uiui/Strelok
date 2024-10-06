@@ -34,5 +34,7 @@ public class ConfigScene implements IScene {
         if (window.getKeyboardPressingCount(KeyCode.ESCAPE) == 1) {
             parent.sceneClosed(SceneType.TITLE);
         }
+
+        window.present(window.getDefaultScreen());
     }
 }

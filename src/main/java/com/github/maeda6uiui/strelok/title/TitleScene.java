@@ -34,5 +34,7 @@ public class TitleScene implements IScene {
         if (window.getKeyboardPressingCount(KeyCode.ENTER) == 1) {
             parent.sceneClosed(SceneType.GAME);
         }
+
+        window.present(window.getDefaultScreen());
     }
 }
